@@ -13,7 +13,7 @@ int serialize_command(uint8_t *out, CommandPacket *packet) {
       out[10] = packet->onOff.on;
       out[11] = packet->onOff.relayIndex;
 
-      return CommandPacketHeaderLength + 4;
+      return CommandPacketHeaderLength + 2;
     }
   }
 }

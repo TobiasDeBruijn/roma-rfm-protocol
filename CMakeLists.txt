@@ -11,4 +11,6 @@ add_library(roma-rfm-protocol
 
         include/packet.h
         include/command.h
+        include/settings.h
+        src/settings.c
 )
