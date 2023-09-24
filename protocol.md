@@ -14,19 +14,26 @@ Identifier: 0x01
 | 0          | uint8                       | Packet identifier |
 | 1-4        | uint32                      | Serial number     |
 | 5-6        | uint16                      | ACK ID            |
-| 7-8        | uint16                      | Command type      |
-| 9..        | Refer to command data table | Command data      | 
+| 7          | flags                       | Flags             |
+| 8-9        | uint16                      | Command type      |
+| 10..       | Refer to command data table | Command data      | 
 
-#### Command types:
+#### Flags
+
+| Bit | Description |
+|-----|-------------|
+| 0   | isAck       |
+
+#### Command types
 
 | Identifier | Command type |
 |------------|--------------|
 | 0x01       | On/Off       |
 
-#### Command data:
+#### Command data
 Note that the byte index provided in the tables below should be added to the first byte of the `Command data` section in the packet itself.
 
-###### On/Off:
+###### On/Off
 
 | Byte index | Type  | Description   |
 |------------|-------|---------------|

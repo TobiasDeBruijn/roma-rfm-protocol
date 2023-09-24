@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 #define CommandPacketIdentifier 0x01
-#define CommandPacketHeaderLength 9
+#define CommandPacketHeaderLength 10
 
 #define CommandPacket_TypeOnOff 0x01
 
@@ -16,15 +16,13 @@ typedef enum CommandType {
 typedef struct CommandPacket {
     uint32_t serialNumber;
     uint16_t ackId;
+    uint8_t flags;
     CommandType commandType;
     union {
         struct OnOff {
             bool on;
             uint8_t relayIndex;
         } onOff;
-        struct Timer {
-            uint16_t duration;
-        } timer;
     };
 } CommandPacket;
 
