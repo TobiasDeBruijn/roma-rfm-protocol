@@ -60,6 +60,7 @@ Identifier: 0x02
 | Bit | Description |
 |-----|-------------|
 | 0   | isAck       |
+| 1   | isRequest   |
 
 #### Settings data type
 

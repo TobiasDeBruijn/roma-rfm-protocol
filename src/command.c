@@ -27,7 +27,7 @@ int deserialize_command(CommandPacket *packet, const uint8_t *in) {
   switch (commandType) {
     case CommandPacket_TypeOnOff: {
       packet->commandType = TypeOnOff;
-      struct OnOff onOff = {
+      struct CommandOnOff onOff = {
               .on = in[10],
               .relayIndex = in[11],
       };

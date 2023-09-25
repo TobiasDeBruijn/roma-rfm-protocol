@@ -26,7 +26,7 @@ int deserialize_settings(SettingsPacket* packet, uint8_t* in) {
   switch(in[8]) {
     case SettingsPacket_TypeOnOff: {
       packet->settingsType = SettingsTypeOnOff;
-      struct OnOff onOff = {
+      struct SettingsOnOff onOff = {
               .relay1DefaultOn = in[9],
               .relay2DefaultOn = in[10],
       };

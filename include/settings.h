@@ -9,6 +9,9 @@
 
 #define SettingsPacket_TypeOnOff 0x01
 
+#define SettingsPacket_Flag_isAck 0x80
+#define SettingsPacket_Flag_isRequest 0x40
+
 typedef enum SettingsType {
     SettingsTypeOnOff,
 } SettingsType;
@@ -19,7 +22,7 @@ typedef struct SettingsPacket {
     uint8_t flags;
     SettingsType settingsType;
     union {
-        struct OnOff {
+        struct SettingsOnOff {
             bool relay1DefaultOn;
             bool relay2DefaultOn;
         } onOff;

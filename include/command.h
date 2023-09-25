@@ -9,6 +9,8 @@
 
 #define CommandPacket_TypeOnOff 0x01
 
+#define CommandPacket_Flag_isAck 0x80
+
 typedef enum CommandType {
   TypeOnOff,
 } CommandType;
@@ -19,7 +21,7 @@ typedef struct CommandPacket {
     uint8_t flags;
     CommandType commandType;
     union {
-        struct OnOff {
+        struct CommandOnOff {
             bool on;
             uint8_t relayIndex;
         } onOff;

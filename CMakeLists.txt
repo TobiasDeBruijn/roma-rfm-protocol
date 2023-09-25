@@ -8,9 +8,9 @@ include_directories(.)
 add_library(roma-rfm-protocol
         src/packet.c
         src/command.c
+        src/settings.c
 
         include/packet.h
         include/command.h
         include/settings.h
-        src/settings.c
 )
